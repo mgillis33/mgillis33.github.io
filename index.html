@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Michael Gillis Portfolio</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         :root {
+         --bg: #f7f8fa;
+         --text: #1f2937;
+         --muted: #6b7280;
+         --card: #ffffff;
+         --accent: #EBBC14;
+         --border: #e5e7eb;
+         }
+         html {
+         scroll-behavior: smooth;
+         }
+         body {
+         font-family: 'Inter', sans-serif;
+         background: var(--bg);
+         color: var(--text);
+         line-height: 1.6;
+         }
+         .container {
+         width: 90%;
+         max-width: 950px;
+         margin: auto;
+         padding: 40px 0;
+         }
+         header {
+         text-align: center;
+         padding: 10px 20px 0px;
+         }
+         header h1 {
+         color: #EFBF04;
+         font-size: 3rem;
+         font-weight: 700;
+         margin-bottom: 10px;
+         }
+         header p {
+         color: var(--muted);
+         font-size: 1.1rem;
+         max-width: 650px;
+         margin: auto;
+         }
+         .buttons {
+         margin-top: 30px;
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 15px;
+         }
+         .btn {
+         text-decoration: none;
+         padding: 8px 20px;
+         border-radius: 10px;
+         border: 1px solid var(--border);
+         border-width: 2px;
+         background: white;
+         color: var(--text);
+         font-weight: 500;
+         transition: all 0.2s ease;
+         }
+         .btn:hover {
+         transform: translateY(-1px);
+         border-color: var(--accent);
+         border-width: 2px;
+         color: #6A5502;
+         }
+         section {
+         margin-top: 60px;
+         scroll-margin-top: 80px;
+         }
+         h2 {
+         font-size: 1.8rem;
+         margin-bottom: 20px;
+         }
+         .card {
+         background: var(--card);
+         border: 1px solid var(--border);
+         border-radius: 16px;
+         padding: 24px;
+         margin-bottom: 20px;
+         }
+         .project-title {
+         font-size: 1.2rem;
+         font-weight: 600;
+         margin-bottom: 8px;
+         }
+         .project-links {
+         margin-top: 12px;
+         }
+         .project-links a {
+         text-decoration: none;
+         color: var(--accent);
+         margin-right: 18px;
+         font-weight: 500;
+         }
+         .project-links a:hover {
+         color: #6A5502;
+         margin-top: 12px;
+         }    
+         ul {
+         padding-left: 20px;
+         }
+         .navbar {
+         width: 100%;
+         background: rgba(255,255,255,0.9);
+         backdrop-filter: blur(8px);
+         border-bottom: 3px solid var(--border);
+         border-bottom-color: #EBBC14;
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+         }
+         .nav-container {
+         width: 90%;
+         max-width: 950px;
+         margin: auto;
+         padding: 18px 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .nav-links {
+         display: flex;
+         list-style: none;
+         gap: 24px;
+         justify-content: center;
+         }
+         .nav-links a {
+         text-decoration: none;
+         color: var(--muted);
+         font-weight: 500;
+         transition: 0.2s ease;
+         }
+         .nav-links a:hover {
+         color: var(--accent);
+         }
+         footer {
+         text-align: center;
+         margin-top: 20px;
+         padding: 30px 0;
+         color: var(--muted);
+         font-size: 0.95rem;
+         }
+  
+         /* MOBILE */
+         @media (max-width: 768px) {
+             header {
+             padding: 0px 0px 0px;
+             }    
+             header h1 {
+             font-size: 2.5rem;
+             }
+             h2 {
+             text-align: center;
+             font-size:1.5rem;
+             }      
+             .buttons {
+             align-items: center;
+             }
+             .btn {
+             width: 120px;
+             font-size: 0.91rem;
+             }
+             p {
+             font-size:0.88rem;
+             }
+             .card {
+             font-size:0.88rem;
+             }
+             .project-title {
+             font-size:0.88rem;
+             }
+             .project-links {
+             font-size:0.88rem;
+             }
+             .project-links a {
+             font-size:0.88rem;
+             }
+             section {
+             margin-top: 30px;
+             scroll-margin-top: 50px;
+             }    
+             .nav-container {
+             flex-direction: column;
+             gap: 12px;
+             }
+             .nav-links {
+             flex-wrap: wrap;
+             font-size: 0.89rem;
+             justify-content: center;
+             gap: 14px;
+             }
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar">
+         <div class="nav-container">
+            <ul class="nav-links">
+               <li><a href="#about">About</a></li>
+               <li><a href="#skills">Skills</a></li>
+               <li><a href="#projects">Projects</a></li>
+               <li><a href="#experience">Experience</a></li>
+               <li><a href="#education">Education</a></li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container">
+
+         <header>
+            <h1>Michael Gillis</h1>
+            <p>
+               Data Analyst | Boston
+            </p>
+            <div class="buttons">
+               <a class="btn" href="files/resume.pdf" download>
+               Resume
+               </a>
+               <a
+                  class="btn"
+                  href="mailto:gillismichaelj@gmail.com"
+                  >
+               <i class="fa fa-envelope"></i> Email
+               </a>
+               <a
+                  class="btn"
+                  href="https://www.linkedin.com/in/michaelgillis33/"
+                  target="_blank"
+                  >
+               <i class="fa-brands fa-linkedin"></i> LinkedIn
+               </a>
+               <a
+                  class="btn"
+                  href="https://github.com/mgillis33"
+                  target="_blank"
+                  >
+               <i class="fa-brands fa-github"></i> GitHub
+               </a>
+            </div>
+         </header>
+
+         <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+               <p>
+                  I work to produce insights from data for business partners, customers, or anyone who wants to make decisions from data. Experienced in healthcare analytics across a broad spectrum of patient care perspectives.
+               </p>
+               <br>
+               <p>
+                  I program primarily in R and Python, using statistical/data packages to clean, manipulate, and analyze data. I'm also certified in SAS. I am proficient in SQL, writing queries to update and search across databases with millions of records. In addition to my programming proficiencies, I use PowerBI and the Microsoft analytics suite (Power Query, DAX, etc.) to provide a unified, consistent, and secure analytics output to end-users.
+               </p>
+               <br>
+               <p>
+                  In my professional work I've managed and run statistical analyses on data pulled from many different sources: patient health records, employee surveys, and observational studies. I also have experience creating a variety of unique data visualizations both in academic and professional settings.
+               </p>
+               <br>
+               <p>
+                  I'm currently a data analyst at Patient Funding Alternatives, and am pursuing my Master's of Science in Applied Data Analytics at Boston University.
+               </p>
+            </div>
+         </section>
+
+         <section id="skills">
+            <h2>Skills</h2>
+            <div class="card">
+               <ul>
+                  <li>Power BI (Power Query, DAX)</li>
+                  <li>R Programming (base, tidyverse)</li>
+                  <li>Python (Pandas, NumPy, Matplotlib)</li>
+                  <li>SQL</li>
+                  <li>Microsoft Excel</li>
+                  <li>Data Visualization</li>
+                  <li>Statistical Analysis</li>
+               </ul>
+            </div>
+         </section>
+
+         <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">
+               <div class="project-title">
+                  Personal Finance Dashboard
+               </div>
+               <p>
+                  Placeholder.
+               </p>
+               <div class="project-links">
+                  <a href="https://github.com/mgillis33" target="_blank">
+                  GitHub
+                  </a>
+                  <a href="https://app.powerbi.com/view?r=eyJrIjoiNmNjNzViNDgtMWZmZi00OTY2LTlhYWQtYThhM2EyNjYxYWQ0IiwidCI6ImZlZGJlOTM4LTNjYTYtNDliYS1iNGI4LWRhMjg1YWI0M2U3MSIsImMiOjN9" target="_blank">
+                  Live Demo
+                  </a>
+               </div>
+            </div>
+            <div class="card">
+               <div class="project-title">
+                  Population Density Maps
+               </div>
+               <p>
+                  Display of population density data for different geographical regions.
+               </p>
+               <div class="project-links">
+                  <a href="https://github.com/mgillis33/population-density-maps" target="_blank">
+                  GitHub
+                  </a>
+                  <a href="https://github.com/mgillis33/population-density-maps/blob/main/massachusetts/massachusetts.png" target="_blank">
+                  View Example
+                  </a>
+               </div>
+            </div>
+            <div class="card">
+               <div class="project-title">
+                  Data Visualizations
+               </div>
+               <p>
+                  Data visualizations made either in an academic or personal setting. May be done through code or through Adobe Illustrator.
+               </p>
+               <div class="project-links">
+                  <a href="https://github.com/mgillis33/data-visualizations" target="_blank">
+                  GitHub
+                  </a>
+               </div>
+            </div>
+         </section>
+
+         <section id="experience">
+            <h2>Experience</h2>
+            <div class="card">
+               <h3>Statistical Data Analyst</h3>
+               <p style = "color: #6b7280"><strong>Patient Funding Alternatives</strong> | <i>June 2025 – Present</i></p>
+               <ul>
+                  <li>Work with patient and operational data to present insights to stakeholders. Design visually pleasing reports and dashboards to tell simple but powerful stories with data. Write R, Python scripts to create ad-hoc reports, data visualizations, etc.</li>
+                  <li>
+                     Design, build, and manage large Power BI semantic models to present a consistent analytical product to end-users.
+                     <ul>
+                        <li>Use Power Query and DAX to enhance models and connect data from many sources such as SQL databases, ticketing APIs, and flat files.</li>
+                     </ul>
+                  </li>
+                  <li>Write SQL queries to extract and validate IT and operational data.</li>
+                  <li>Use Zendesk to field incoming tickets and Jira to manage ongoing projects.</li>
+               </ul>
+               <br>
+               <h3>Data Cleaner</h3>
+               <p style = "color: #6b7280"><strong>Patient Funding Alternatives</strong> | <i>July 2024 – June 2025</i></p>
+               <ul>
+                  <li>Prepared existing databases for import into new billing system. Focused on cleaning and validating data both before and after import.</li>
+                  <li>Utilized R scripts and Excel VBA macros to clean and validate data.</li>
+               </ul>
+            </div>
+            <div class="card">
+               <h3>Data Analyst Intern</h3>
+               <p style = "color: #6b7280;"><strong>Fresenius Medical Care North America</strong> | <i>May 2023 – July 2024</i></p>
+               <ul>
+                  <li>Performed statistical analysis as the R programmer for the Office of Experience.</li>
+                  <li>Focused on exporting, cleaning, and analyzing customer experience and demographic data to help improve patient, employee, and physician experience.</li>
+                  <li>Utilized R, Excel, Powerpoint, and Qualtrics to leverage survey data and produce actionable insights for business partners.</li>
+               </ul>
+            </div>
+            <div class="card">
+               <h3>Game Day Statistician</h3>
+               <p style = "color: #6b7280"><strong>Emmanuel College</strong> | <i>January 2023 – May 2023</i></p>
+               <ul>
+                  <li>Collected and managed large amounts of data relevant to athletics. Mainly focused on Softball for the Spring 2023 season.</li>
+                  <li>Utilized CBS’ Stat Crew Software for data collection and transmission.</li>
+               </ul>
+               <br>
+               <h3>Mathematics Tutor</h3>
+               <p style = "color: #6b7280"><strong>Emmanuel College</strong> | <i>August 2022 – December 2022</i></p>
+               <ul>
+                  <li>Collected and managed large amounts of data relevant to athletics. Mainly focused on Softball for the Spring 2023 season.</li>
+                  <li>Utilized CBS’ Stat Crew Software for data collection and transmission.</li>
+               </ul>
+            </div>
+         </section>
+
+         <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+               <img src="files/BU-logo.png" style="width: 14%;" class="card-img">
+               <h4 style = "color: #6b7280">Master of Science</h4>
+               <h3>Applied Data Analytics</h3>
+               <p>Boston University</p>
+               <p style = "font-size: 14px"><i>Expected 2028</i></p>
+            </div>
+            <div class="card">
+               <img src="files/emmanuel-logo.jpg" style="width: 10%;" class="card-img">
+               <h4 style = "color: #6b7280">Bachelor of Arts</h4>
+               <h3>Mathematics: Statistics, Data Analytics</h3>
+               <p>Emmanuel College</p>
+               <p style = "font-size: 14px">2024</p>
+            </div>
+         </section>
+         <footer>
+            <p>
+             Built with HTML & CSS • Hosted on GitHub Pages • <a href="https://github.com/mgillis33/mgillis33.github.io" style="color: #6b7280"> GitHub Repository </a>
+            </p>
+         </footer>
+      </div>
+   </body>
+</html>
